@@ -6,5 +6,6 @@ COPY . /usr/local/hk/hk-meta-recon
 
 WORKDIR /usr/local/hk
 RUN --mount=type=ssh . /usr/local/hk/hk-pilot/setup.sh &&\
-    hkp install -r hk-software
+    hkp install -r hk-software &&\
+    true
 
