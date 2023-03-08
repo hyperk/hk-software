@@ -1,4 +1,4 @@
-FROM ghcr.io/hyperk/hk-meta-externals:main
+FROM ghcr.io/hyperk/hk-pilot:main
 
 RUN --mount=type=ssh mkdir -p -m 0600 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
 
