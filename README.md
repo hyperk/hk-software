@@ -2,7 +2,7 @@
 
 ## How to use hk-software using docker
 
-Built images of hk-software are available on the GitHub Container Registry (GHCR).
+Built images of hk-software are available on the GitHub Container Registry (GHCR): https://github.com/hyperk/hk-software/pkgs/container/hk-software
 They should exist for each tagger version of hk-software, but also for the latest commit in the main branch.
 
 To download them, you need to first login into GHRC (no need to redo this if done at least once):
