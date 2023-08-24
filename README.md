@@ -1,5 +1,21 @@
 # Meta-package for HK Software stack
 
+## How to build hk-software Docker image locally
+
+It is important to have things for building the image locally (assuming you have Docker installed on your machine):
+
+-   Have BUILDKIT enabled (in most recent docker installation, this is enabled by default).
+    This can be done by either doing `export DOCKER_BUILDKIT=1` or prepending the docker build command with `DOCKER_BUILDKIT=1` (like `DOCKER_BUILDKIT=1 docker build ...`)
+-   Expose the ssh agent socket so that hk-pilot can use your ssh agent to clone the proper repositories e.g.
+    ```bash
+    docker build --ssh default .
+    ```
+
+Therefore the total command to be sure it will work is:
+```bash
+DOCKER_BUILDKIT=1 docker build --ssh default -t ghcr.io/hyperk/hk-software:latest .
+```
+
 ## How to use hk-software using docker
 
 Built images of hk-software are available on the GitHub Container Registry (GHCR): https://github.com/hyperk/hk-software/pkgs/container/hk-software
@@ -28,7 +44,7 @@ Then source the hk-pilot `setup.sh` and the hk-software `setup.sh`:
 . /usr/local/hk/hk-software/install-Linux_x86_64-gcc_8-python_3.8.13/setup.sh
 ```
 
-From there, you should have access to all the software:
+From there, you should have access to all the software, e.g.:
 
 ```bash
 which WCSim
