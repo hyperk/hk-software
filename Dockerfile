@@ -9,4 +9,7 @@ RUN echo "  FLOWER: git@github.com:HKDAQ/FLOWER.git" >> /usr/local/hk/hk-pilot/d
 RUN --mount=type=ssh . /usr/local/hk/hk-pilot/setup.sh &&\
     hkp install -r hk-software &&\
     true
+RUN chmod +x /usr/local/hk/hk-software/entrypoint.sh
+ENTRYPOINT ["/usr/local/hk/hk-software/entrypoint.sh"]
+CMD ["/bin/bash"]
 
