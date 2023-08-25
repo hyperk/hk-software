@@ -37,15 +37,19 @@ docker run --rm -it ghcr.io/hyperk/hk-software:0.0.2
 ```
 
 Note the change of prompt.
-Then source the hk-pilot `setup.sh` and the hk-software `setup.sh`:
 
-```bash
-. /usr/local/hk/hk-pilot/setup.sh
-. /usr/local/hk/hk-software/install-Linux_x86_64-gcc_8-python_3.8.13/setup.sh
-```
-
+As of 0.0.3, the hk-pilot and hk-software `setup.sh` scripts are automatically loaded when running the container.
 From there, you should have access to all the software, e.g.:
 
 ```bash
 which WCSim
 ```
+
+If that were not the case, you can source the hk-pilot `setup.sh` and the hk-software `setup.sh`:
+
+```bash
+. /usr/local/hk/hk-pilot/setup.sh
+. /usr/local/hk/hk-software/install-$(hkp --system)/setup.sh
+```
+
+
